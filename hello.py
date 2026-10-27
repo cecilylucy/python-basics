@@ -1,0 +1,7 @@
+print("Hello Greg, welcome to the python world")
+print(77)
+print("joy")
+print("81")
+print(10.5)
+# print("My name","is", 88, "Neymar", 65)
+print(10*45-20/5)
