@@ -9,3 +9,5 @@
 #git commit -m "Python basics"
 #git remote add origin https://github.com/cecilylucy/python-basics.git
 #git push - u origin master
+
+#pip freeze > requirements.txt
