@@ -228,6 +228,53 @@ def my_function(fname, lname):
 person = {"fname": "Emily", "lname": "Refnes"}
 my_function(**person) #same as: my_function(fname="Emil", lname="Refnes"
 
+# Python scope
+# A local scope is a variable created inside a function belongs to the local scope of that function, and can only be used inside that function.
+def myfunc():
+    x = 300
+    print(x)
+
+myfunc()
+
+def myfunc():
+    x = 400
+    def myinnerfunc():
+        print(x)
+    myinnerfunc()
+myfunc()
+
+# A global scope A variable can be created in the main body of the python code is a global variable and belongs to the global scope. They are available from within any scope, global and local.
+x = 250
+
+def myfunc():
+    print(x)
+
+myfunc()
+print(x)
+
+x = 500
+def myfunc():
+    x = 150
+    print(x)
+myfunc()
+print(x)
+
+def myfunc():
+    global x
+    x = 2000
+
+myfunc()
+print(x)
+
+# The nonlocal keyword is used to work with variables inside nested functions. The nonlocal makes the variable belong to the outer function
+def myfunc1():
+    x = "Jane"
+    def myfunc2():
+        nonlocal x
+        x = "Hello"
+    myfunc2()
+    return x
+print(myfunc())
 
 
 
