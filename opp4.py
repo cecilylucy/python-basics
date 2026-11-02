@@ -17,6 +17,8 @@ class Employee:
         print(self.department)
         print(self.gender)
         print("***************************")
+    def print_name(self):
+        print(f"Name is {self.full_name}")
 
 class SalariedEmployee(Employee):
     def __init__(self, name: str, id_no: str, department: str, gender: str,salary:int, tenure:int ):
@@ -31,8 +33,20 @@ class CasualWorker(Employee):
     def calc_wage(self, hours: float):
         return hours * self.rate
 
+    # Overriding
+    def print_details(self):
+        print(f"Rate is {self.rate} per hour")
+        super().print_details() #instead of repeating call it by super #not a must though
+        # print(self.full_names)
+        # print(self.identity_no)
+        # print(self.department)
+        # print(self.gender)
+
+
 s1 = SalariedEmployee("Joseph Jah", "4467888", "HR", "F", 8789, 87)
 c1 = CasualWorker("Collins Nde", "676789", "Sales", "F", 546.0)
 s1.print_details()
 c1.print_details()
 print(c1.calc_wage(19))
+
+c1.print_name()
